@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.3/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.min.js"></script>
+
+
+
+    <script>
+        $(document).ready(function () {
+            $('.carousel').carousel();
+        });
+    </script>
+
+
+    <title>Lucí Tus Uñas</title>
+
+    <!-- CSS -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            position: relative;
+            height: 100vh;
+            /* overflow: hidden; */
+        }
+
+        .header video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 10%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1;
+            margin: 20px;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+
+        .header-logo img {
+            max-width: 100px;
+            height: 50px;
+        }
+
+        .header-title {
+            font-size: 2rem;
+            margin: 0;
+            white-space: nowrap;
+        }
+
+        .header-nav {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-left: 20px;
+        }
+
+        .header-nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .header-nav li {
+            margin: 0 10px;
+            margin-right: 20px;
+        }
+
+        .header-nav a {
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .nav__links {
+
+            text-decoration: none;
+            font-size: 1.5rem;
+        }
+
+        .header-title,
+        .header-nav a {
+            color: #6c113e;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                height: auto;
+            }
+
+            .header video {
+                position: absolute;
+                z-index: 0;
+            }
+
+            .header-content {
+                height: auto;
+                padding: 10px;
+                position: relative;
+                /* align-items: baseline; */
+            }
+
+            .header-logo {
+                margin-bottom: 10px;
+            }
+
+            .header-title {
+                font-size: 15px;
+            }
+
+            .header-nav {
+                justify-content: center;
+                width: 100%;
+            }
+
+            .header-nav ul {
+                flex-direction: column;
+                align-items: first baseline;
+                ;
+            }
+
+            .header-nav li {
+                margin: 10px 0;
+            }
+
+            .nav__links {
+                font-size: 1rem;
+            }
+        }
+
+        /* Estilos para las tablas */
+        .pricing-tables {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+
+        .pricing-tables table {
+            width: 30%;
+            border-collapse: separate;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .pricing-tables th {
+            background-color: #8b5eab;
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.5rem;
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .pricing-tables td {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .pricing-tables tbody tr:last-child td {
+            border-radius: 0 0 10px 10px;
+        }
+
+        /* Estilos para dispositivos móviles */
+        @media (max-width: 768px) {
+            .pricing-tables {
+                flex-direction: column;
+                align-items: center;
+                gap: 1em;
+            }
+
+            .pricing-tables table {
+                width: 90%;
+                margin: 0;
+            }
+        }
+
+        .carousel-item img {
+            max-width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            max-width: 50%;
+            height: auto;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+
+
+        .testimonials {
+            margin-top: 50px;
+        }
+
+        .testimonial {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
+            background-color: #f5f5f5;
+            border-radius: 10px;
+        }
+
+        .testimonial-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .carousel-indicators {
+            margin-top: 30px;
+        }
+
+        .carousel-indicators li {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin: 0 5px;
+            background-color: #a8a8a8;
+        }
+
+        .carousel-indicators .active {
+            background-color: #000;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            background-color: black;
+        }
+
+        h2 {
+            font-family: 'Dancing Script', cursive;
+            font-weight: normal;
+            font-size: 36px;
+            text-align: center;
+            color: #8b5eab;
+        }
+
+
+        section {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        input[type="time"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        button[type="submit"] {
+            background-color: #0066cc;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0052a3;
+        }
+
+
+
+        footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #8b5eab;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.footer-container p {
+  display: flex;
+  align-items: center;
+}
+
+.footer-container a {
+  margin-left: 10px;
+}
+        .contacto-link {
+
+            color: #ff69b4;
+            text-decoration: none;
+        }
+
+        .contacto-link:hover {
+            color: #8b5eab;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 600;
+
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <video autoplay muted loop>
+            <source src="/images/nail_2.mp4" type="video/mp4" />
+        </video>
+        <div class="header-content">
+            <div class="header-logo">
+                <img src="/images/luci_logo.png" alt="Logo" />
+                <h1 class="header-title">Lucí Tus Uñas</h1>
+            </div>
+            <nav class="header-nav" id="contacto">
+                <ul>
+                    <li><a href="#inicio" class="nav__links">Inicio</a></li>
+                    <li><a href="#acerca_de" class="nav__links">Acerca de</a></li>
+                    <li><a href="#precios" class="nav__links">Precios</a></li>
+                    <li>
+                        <a target="_blank"
+                            href="https://wa.me/?text=Hola%20Luci,%20me%20interesa%20reservar%20un%20turno!!%20"
+                            class="nav__links">
+                            <img src="/images/whatsappp.svg" class="">
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://www.instagram.com/luci.tus.unass/" class="nav__links">
+                            <img src="/images/instagram.svg" class="">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <style>
+
+    </style>
+
+
+    <section id="inicio">
+        <div class="container">
+            <h2>Centro especializado en manicure y pedicure | Lucí Tus Uñas</h2>
+            <p>En nuestro salón nos ocupamos de resaltar tu belleza, haciendo que tus uñas luzcan encantadoras.
+                Brindamos un servicio profesional avalado por la experiencia y calidad en todos los tratamientos
+                está a tu disposición para mimarte como te mereces.</p>
+        </div>
+    </section>
+
+    <section class="container-fluid" id="acerca_de">
+        <div class="container">
+            <h2>Imagenes que hablan por si mismas!!</h2>
+        </div>
+
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+                <li data-target="#myCarousel" data-slide-to="4"></li>
+                <li data-target="#myCarousel" data-slide-to="5"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/images/lucí_manicure.jpg" alt="Manicure">
+                </div>
+                <div class="carousel-item">
+                    <img src="/images/lucí_pedicure.jpg" alt="Pedicure">
+                </div>
+                <div class="carousel-item">
+                    <img src="/images/lucí_tratamientos.jpg" alt="Tratamientos">
+                </div>
+                <div class="carousel-item">
+                    <img src="/images/lucí_manicure.jpg" alt="Cortes">
+                </div>
+                <div class="carousel-item">
+                    <img src="/images/lucí_pedicure.jpg" alt="Tintes">
+                </div>
+                <div class="carousel-item">
+                    <img src="/images/lucí_tratamientos.jpg" alt="Maquillaje">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        $('.carousel').carousel({
+            interval: 1500,
+            pause: true,
+            wrap: false
+        });
+    </script>
+
+
+    <section class="pricing" id="precios">
+        <div class="container">
+            <h2>Animate, haz tu reserva! Revisa nuestros precios a partir de Febrero en Lucí Tus Uñas!!</h2>
+            <p></p>
+        </div>
+        <div class="pricing-tables">
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="2">Manicura</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Tradicional</td>
+                        <td>$800</td>
+                    </tr>
+                    <tr>
+                        <td>Semipermanente</td>
+                        <td>$1200</td>
+                    </tr>
+                    <tr>
+                        <td>Retirar Semi</td>
+                        <td>$300</td>
+                    </tr>
+                    <tr>
+                        <td>Viáticos</td>
+                        <td>$200</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="2">Pedicura</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Tradicional</td>
+                        <td>$1300</td>
+                    </tr>
+                    <tr>
+                        <td>Semipermanente</td>
+                        <td>$1500</td>
+                    </tr>
+                    <tr>
+                        <td>Viáticos</td>
+                        <td>$200</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="2">Tratamientos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Tradicional</td>
+                        <td>$800</td>
+                    </tr>
+                    <tr>
+                        <td>Semipermanente</td>
+                        <td>$1200</td>
+                    </tr>
+                    <tr>
+                        <td>Viáticos</td>
+                        <td>$200</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+
+    <section class="container-fluid">
+        <div class="container">
+            <h2>Testimonios de nuestro esfuerzo por consentirte de la mejor manera!!</h2>
+        </div>
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
+                <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+                <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+                <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="testimonial">
+                        <div class="testimonial-image">
+                            <img src="images/face.jpg" alt="Testimonial Image">
+                        </div>
+                        <div class="testimonial-text">
+                            <p>Luci es atenta y profesional, los productos de calidad...! Se adapto a lo que necesitaba
+                                y el resultado fue lo que buscaba!! Muchas gracias, me la llevaría a donde vivo para
+                                tener a una profesional de confianza cerca...</p>
+                            <h4>Daniela</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="testimonial">
+                        <div class="testimonial-image">
+                            <img src="images/face2.jpg" alt="Testimonial Image">
+                        </div>
+                        <div class="testimonial-text">
+                            <p>Al igual que la última vez, fue increíble y volveré la próxima vez. También tuve un
+                                problema con mi reserva y Luci fue muy comprensiva para que me reembolsaran. Muchas
+                                gracias!!</p>
+                            <h4>Alejandra</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="testimonial">
+                        <div class="testimonial-image">
+                            <img src="images/face3.jpg" alt="Testimonial Image">
+                        </div>
+                        <div class="testimonial-text">
+                            <p>Luci tiene un toque muy suave! No me dolió nada, aunque suele ser diferente ya que soy
+                                sensible. Es adorable como persona y el tratamiento muy bien. Se le nota la experiencia
+                                en el trato. Sin duda volveré...</p>
+                            <h4>Gabriel</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="testimonial">
+                        <div class="testimonial-image">
+                            <img src="images/face4.jpg" alt="Testimonial Image">
+                        </div>
+                        <div class="testimonial-text">
+                            <p>Luci fue muy amable y agradable. Mis uñas quedaron perfectas. Es una esteticista que le
+                                encanta su trabajo, se nota en su profesionalidad y su amabilidad hacia sus clientes.
+                                Soy de Mar del Plata pero cuando vuelva a Buenos Aires volveré sin dudarlo...</p>
+                            <h4>Lorena</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </a>
+        </div>
+    </section>
+
+    <section class="container-fluid">
+        <div class="container">
+            <h2>Sacate las dudas... preguntas frecuentes... </h2>
+        </div>
+        <div class="faq">
+            <h3>¿Cuáles son los beneficios de hacerse una manicura o pedicura?</h3>
+            <p>Además de lucir unas manos y pies bonitos y cuidados, hacerse una manicura o pedicura puede mejorar la
+                salud de tus uñas y piel. Ayuda a prevenir infecciones, a mantener las cutículas hidratadas, a exfoliar
+                la piel muerta y a mejorar la circulación sanguínea.</p>
+        </div>
+        <div class="faq">
+            <h3>¿Cuánto tiempo dura una manicura o pedicura?</h3>
+            <p>El tiempo que dura una manicura o pedicura depende del tipo de tratamiento que elijas y de tus hábitos de
+                cuidado personal. En general, una manicura o pedicura básica puede durar de 3 a 5 días, mientras que un
+                tratamiento más completo y duradero, como el esmaltado permanente, puede durar de 2 a 4 semanas.</p>
+        </div>
+        <div class="faq">
+            <h3>¿Es seguro hacerse una manicura o pedicura en un salón de belleza?</h3>
+            <p>Sí, siempre y cuando el salón de belleza cumpla con las medidas de higiene y seguridad necesarias.
+                Asegúrate de que los utensilios utilizados estén limpios y esterilizados, de que los productos sean de
+                calidad y estén dentro de su fecha de caducidad, y de que el personal que te atienda use guantes y
+                mascarilla.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Reserva un turno!! no dudes en <a href="#contacto" class="contacto-link">contactarnos por Whatsapp ó
+                Instagram!!</a></h2>
+        <form id="reservation-form">
+            <div>
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="phone">Teléfono:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div>
+                <label for="date">Fecha:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div>
+                <label for="time">Hora:</label>
+                <input type="time" id="time" name="time" required>
+            </div>
+            <div>
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="message"></textarea>
+            </div>
+            <button type="submit" id="submit-btn">Reservar</button>
+        </form>
+        <script>
+            const form = document.getElementById("reservation-form");
+            const nameInput = document.getElementById("name");
+            const emailInput = document.getElementById("email");
+            const phoneInput = document.getElementById("phone");
+            const dateInput = document.getElementById("date");
+            const timeInput = document.getElementById("time");
+            const messageInput = document.getElementById("message");
+            const submitBtn = document.getElementById("submit-btn");
+
+            form.addEventListener("submit", (e) => {
+                e.preventDefault();
+
+                const formData = new FormData(form);
+
+                fetch("https://formspree.io/f/meqwlozv", {
+                        method: "POST",
+                        body: formData,
+                        headers: {
+                            "Accept": "application/json"
+                        }
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            alert("¡Tu reserva ha sido enviada con éxito! Te contactaremos pronto.");
+                            form.reset();
+                            submitBtn.disabled = true;
+                        } else {
+                            throw new Error(
+                                "Ha ocurrido un error al enviar la reserva. Por favor, inténtalo de nuevo más tarde."
+                            );
+                        }
+                    })
+                    .catch(error => alert(error.message));
+            });
+        </script>
+    </section>
+
+
+    <footer>
+        <div class="footer-container">
+            <p>2023 Lucí Tus Uñas & 2023 Design Don. Todos los derechos reservados<a target="_blank" href="https://wa.me/?text=Hola%20Luci,%20me%20interesa%20reservar%20un%20turno!!%20"
+                class="nav__links">
+                <img src="/images/whatsappp.svg" class="">
+            </a>
+            <a target="_blank" href="https://www.instagram.com/luci.tus.unass/" class="nav__links">
+                <img src="/images/instagram.svg" class="">
+            </a></p>
+            <div class="social-media">
+                
+            </div>
+           
+            
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
